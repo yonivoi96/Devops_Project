@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DOCKER_HUB_USERNAME="yonatanv96"
+DOCKER_HUB_REPO_NAME="project_dev"
+IMAGE_TAG="latest"
+
+docker build -t $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPO_NAME:$IMAGE_TAG .
+
+docker push $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPO_NAME:$IMAGE_TAG
