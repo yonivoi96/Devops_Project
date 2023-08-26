@@ -13,7 +13,7 @@ def GetIP():
 @app.route('/')
 def PrintIP():
     ip = GetIP()
-    message = "Your Computer IP Address is:" + ip
+    message = "Your Computer IP Address is: bla"
     return message
 
 # Press the green button in the gutter to run the script.
