@@ -32,7 +32,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           username: yonatan.voi
-          password: {{secrets.GMAIL_PASSWORD}}
+          password: ${{secrets.GMAIL_PASSWORD}}
           subject: Build is over
           body: Some code was pushed into the repo
           to: yonatan.voi@gmail.com
