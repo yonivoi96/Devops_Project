@@ -26,6 +26,15 @@ jobs:
       - name: Run tests & coverage
         run: pytest --cov=main tests/
 
+      - name: Login to Docker hub
+        uses: docker/login-action@v2
+          with:
+            username: ${{ secrets.DOCKER_HUB_USER }}
+            password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: build & push
+        run: ./build_my_image.sh
+
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
