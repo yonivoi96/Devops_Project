@@ -25,3 +25,15 @@ jobs:
 
       - name: Run tests
         run: python3 -m pytest
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: yonatan.voi
+          password: {{secrets.GMAIL_PASSWORD}}
+          subject: Build is over
+          body: Some code was pushed into the repo
+          to: yonatan.voi@gmail.com
+          from: yonatan.voi@gmail.com
