@@ -5,15 +5,15 @@ import requests
 app = Flask(__name__)
 
 def GetIP():
-    response = requests.get('https://httpbin.org/ip')
-    data = response.json()
-    IP = data['origin']
+    import requests
+
+    IP = requests.get('https://api.ipify.org').text
     return IP
 
 @app.route('/')
 def PrintIP():
     ip = GetIP()
-    message = "Your Computer IP Address is: bla"
+    message = "Your Computer IP Address is: " + ip
     return message
 
 # Press the green button in the gutter to run the script.
