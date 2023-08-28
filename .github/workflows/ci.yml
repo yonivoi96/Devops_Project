@@ -43,6 +43,9 @@ jobs:
           username: yonatan.voi
           password: ${{secrets.GMAIL_PASSWORD}}
           subject: Build is over
-          body: Some code was pushed into the repo
+          body: |
+            The GitHub Actions build for repository ${{ github.repository }} has completed.
+            Status: ${{ job.status }}
+          if: always()
           to: yonatan.voi@gmail.com
           from: yonatan.voi@gmail.com
