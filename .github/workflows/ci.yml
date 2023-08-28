@@ -44,7 +44,7 @@ jobs:
           password: ${{secrets.GMAIL_PASSWORD}}
           subject: Build is over
           body: |
-            The GitHub Actions build for repository ${{ github.repository }} has completed.
+            The build process in ${{ github.repository }} has completed.
             Status: ${{ job.status }}
           if: always()
           to: yonatan.voi@gmail.com
