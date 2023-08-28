@@ -36,6 +36,7 @@ jobs:
         run: ./build_my_image.sh
 
       - name: Send email
+        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -46,6 +47,5 @@ jobs:
           body: |
             The build process in ${{ github.repository }} has completed.
             Status: ${{ job.status }}
-          if: always()
           to: yonatan.voi@gmail.com
           from: yonatan.voi@gmail.com
